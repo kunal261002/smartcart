@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 800px;
+      margin: 20px auto;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+    }
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin-bottom: 20px;
+    }
+    th, td {
+      border: 1px solid #ddd;
+      padding: 10px;
+      text-align: left;
+    }
+    th {
+      background-color: #f2f2f2;
+    }
+    tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+    .checkout-button {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+      text-align: center;
+      text-decoration: none;
+    }
+    .checkout-button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Checkout</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Product</th>
+          <th>Price (Rs)</th>
+        </tr>
+      </thead>
+      <tbody id="checkoutTableBody">
+        <!-- Detected products will be dynamically added here -->
+      </tbody>
+    </table>
+    <button class="checkout-button" id="checkoutButton">Proceed to Checkout</button>
+  </div>
+
+  <script>
+    const checkoutTableBody = document.getElementById('checkoutTableBody');
+    const checkoutButton = document.getElementById('checkoutButton');
+
+    // WebSocket client
+    const ws = new WebSocket('ws://localhost:8765');
+
+    ws.onopen = function() {
+      console.log('Connected to WebSocket server');
+    };
+
+    ws.onmessage = function(event) {
+      console.log('Received detection from Python: ', event.data);
+      const detection = event.data;
+
+      let price = 10; // Default price
+
+      // Check if the detection contains "laptop" or "person" and set the price accordingly
+      if (detection.toLowerCase().includes('laptop')) {
+        price = 30; // If laptop is detected, set price to 30
+      } else if (detection.toLowerCase().includes('person')) {
+        price = null; // If person is detected, set price to 20
+      }
+
+      // Add the detected product to the table
+      const newRow = document.createElement('tr');
+      newRow.innerHTML = `
+        <td>${checkoutTableBody.childElementCount + 1}</td>
+        <td>${detection}</td>
+        <td>${price}</td>
+      `;
+      checkoutTableBody.appendChild(newRow);
+    };
+
+    // Event listener for checkout button
+    checkoutButton.addEventListener('click', function() {
+      // Add code for processing payment or redirecting to payment page
+      alert('Proceeding to checkout...');
+    });
+  </script>
+</body>
+</html>

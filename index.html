@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Shopping Mart</title>
+<link rel="icon" type="image/icon" href="image/favicon.png">
+
+<!--Code for font awesome cdn -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!--Code for font awesome cdn -->
+
+<!--Code for linking css file -->
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<!--Code for linking css file -->
+
+<!-- Include Swiper CSS -->
+<link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css">
+
+<!-- Include Swiper JS -->
+<script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+
+
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+<body>
+	<header class="header">
+		<a href="#" class="logo"><i class="fa fa-shopping-cart"></i> Smart Cart</a>
+
+<nav class="navbar">
+	<a href="#home">Home</a>
+	<a href="#features">Features</a>
+	<a href="#navigation">Navigation</a>
+	<a href="#products">Products</a>
+	
+</nav>
+
+<div class="icons">
+	<div class="fa fa-bars" id="menu-btn"></div>
+	<div class="fa fa-search" id="search-btn"></div>
+	<div class="fa fa-user" id="login-btn"></div>
+</div>
+
+<form class="search-form">
+	<input type="search" id="search-box" placeholder="Search Here....">
+	<label for="search-box" class="fa fa-search"></label>
+</form>
+
+<form class="login-form">
+	<h3>Login Now</h3>
+	<input type="email" id="username" placeholder="Enter your email " class="box">
+	<input type="password" id="password" placeholder="Enter your password" class="box">
+
+<p>Forgot Password <a href="#"> Click Here</a></p>
+<p>Don't Have An Account<a href="#"> Create Now</a></p>
+
+<button type="button" id="btn" onclick="func()">Login</button>
+
+
+	<script>
+		function func() {
+			var email = document.getElementById("username").value;
+			var pass = document.getElementById("password").value;
+			if (email === 'kunal@123.com' && pass === '1234') {
+				alert("Successful login!");
+				window.location.assign("login.html");
+			} else {
+				alert("Invalid credentials. Please try again.");
+			}
+		}
+	
+	
+</script>
+</form>
+</header>
+
+<section class="home" id="home">
+	<div class="content">
+	    <h3>Your Smart Shopping Starts Here</h3>
+	    <a href="#" class="btn">Start Adding Items To Your Cart</a>
+	</div>
+</section>
+
+<section class="features" id="features">
+	<h1 class="heading">Our <span>Features</span></h1>
+
+	<div class="box-container">
+		<div class="box">
+			<img src="image/feature-img-1.png">
+			<h3>Fresh And Organic</h3>
+
+			<p>Welcome to our smart cart, where freshness meets convenience! Dive into a world of vibrant flavors and wholesome goodness with our curated selection of fresh and organic items.</p>
+            <div class="hidden-content">
+                <p>From crisp produce to farm-fresh dairy and beyond, we're passionate about bringing you the finest quality ingredients to nourish your body and delight your taste buds. Experience the difference of shopping with us, where every aisle is bursting with nature's best offerings. Embrace a healthier, more sustainable lifestyle one delicious bite at a time. Explore our aisles today and discover the true essence of freshness.
+                </p>
+            </div>
+            <a href="#" class="btn">Read More</a>
+
+		</div>
+
+		<div class="box">
+			<img src="image/feature-img-2.png">
+			<h3>Easy Navigation</h3>
+
+			<p>Experience effortless indoor navigation as you traverse our shopping mart with ease. Our innovative cart navigation system ensures you never lose your way amidst our vast aisles.</p>
+			<div class="hidden-content">
+                <p>Seamlessly maneuver through our store, guided by intuitive mapping technology integrated directly into your shopping cart. Say goodbye to aimless wandering and hello to efficient, stress-free shopping. Let our smart navigation system be your trusted companion on your next shopping adventure.</p>
+            </div>
+
+			<a href="#" class="btn">Read More</a>
+
+		</div>
+
+		<div class="box">
+			<img src="image/feature-img-3.png">
+			<h3>Self Checkout</h3>
+
+			<p>Avoid long queue and breeze through checkout with our convenient self-checkout process. Empower yourself with the freedom to scan, pay, and go at your own pace.</p>
+			<div class="hidden-content">
+                <p> Our user-friendly interface makes checking out a breeze, allowing you to complete your purchase effortlessly. Enjoy a seamless shopping experience from start to finish with our efficient self-checkout solution. Say goodbye to waiting and hello to convenience - it's shopping on your terms.</p>
+            </div>
+
+			<a href="#" class="btn">Read More</a>
+
+		</div>
+	</div>
+</section>
+
+<section class="navigation" id="navigation">
+	<h1 class="heading">Indoor <span>Navigation</span></h1>
+	<div class="navigate">
+		<p>Navigate your shopping journey effortlessly with our cutting-edge indoor navigation technology find what you need with ease</p>
+        <a href="https://app.mappedin.com/map/65e386d1789fb8fd13e8c601">Click here</a>
+	</div>
+</section>
+
+<section class="products" id="products">
+	<h1 class="heading">Our <span>Products</span></h1>
+
+	<div class="swiper product-slider">
+
+		<div class="swiper-wrapper">
+			<div class="swiper-slide box">
+				<img src="image/product-1.png">
+				<h1>Maggi</h1>
+				<div class="stars">
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star-half"></i>
+				</div>
+			</div>
+
+			<div class="swiper-slide box">
+				<img src="image/product-2.png">
+				<h1>Coke</h1>
+				<div class="stars">
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star-half"></i>
+				</div>
+			</div>
+
+			<div class="swiper-slide box">
+				<img src="image/product-3.png">
+				<h1>Lays</h1>
+				<div class="stars">
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star-half"></i>
+				</div>
+			</div>
+
+            <div class="swiper-slide box">
+				<img src="image/product-4.png">
+				<h1>ParleG</h1>
+				<div class="stars">
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star-half"></i>
+				</div>
+			</div>
+
+			<div class="swiper-slide box">
+				<img src="image/product-5.png">
+				<h1>Lays(Magic Masala)</h1>
+				<div class="stars">
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star"></i>
+					<i class="fa fa-star-half"></i>
+				</div>
+			</div>
+		</div>
+
+	</div>
+	
+</section>
+
+
+
+<section class="footer">
+	<div class="box-container">
+		<div class="box">
+			<h3>SmartCart <i class="fa fa-shopping-cart"></i></h3>
+			<p>Feel Free To Follow Us ON Our Social Media Handlers All The Links Are Given Below</p>
+
+			<div class="share">
+				<a href="#" class="fa fa-facebook"></a>
+				<a href="#" class="fa fa-instagram"></a>
+				<a href="#" class="fa fa-twitter"></a>
+			</div>
+		</div>
+
+		<div class="box">
+			<h3>Contact Info</h3>
+			<a href="#" class="links"> <i class="fa fa-phone"></i> +91 9874692733</a>
+			<a href="#" class="links"> <i class="fa fa-phone"></i> +91 9846926399</a>
+			<a href="#" class="links"> <i class="fa fa-envelope"></i> projectsscrpi@gmail.com</a>
+			<a href="#" class="links"> <i class="fa fa-map-marker"></i> Borivali, Mumbai</a>
+		</div>
+
+		<div class="box">
+			<h3>Quick Links</h3>
+			<a href="#" class="links"> <i class="fa fa-arrow-right"></i>Home</a>
+			<a href="#" class="links"> <i class="fa fa-arrow-right"></i>Features</a>
+			<a href="#" class="links"> <i class="fa fa-arrow-right"></i>Navigation</a>
+			<a href="#" class="links"> <i class="fa fa-arrow-right"></i>Products</a>
+	
+		</div>
+        
+        <div class="box">
+			<h3>News Letter</h3>
+			<p>Subscribe For Latest Updates</p>
+			<input type="email" placeholder="Your Email" class="email">
+			<input type="submit" value="Subscribe" class="btn">
+			<img src="image/payment.png" class="payment-img">
+		</div>
+	</div>
+
+<div class="credit">Created By <span>Group B13</span> | All Rights Reserved</div>
+</section>
+
+<script src="js/script.js"></script>
+
+</body>
+</html>
